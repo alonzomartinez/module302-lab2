@@ -2,140 +2,79 @@
 :root {
   --yellow: hsl(47, 88%, 63%);
   --white: hsl(0, 0%, 100%);
-  --grey: hsl(0, 0%, 50%);
-  --black: hsl(0, 0%, 7%);
-  --font-body: 'Figtree', sans-serif;
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
 }
 
-/* Reset Layout & Core Defaults */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Global Reset & Body Styling */
 body {
-  font-family: var(--font-body);
   background-color: var(--yellow);
-  color: var(--black);
-  min-height: 100vh;
+  font-family: 'Figtree', sans-serif;
+  color: var(--gray-950);
 }
 
-/* Perfect Centering Container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 24px;
+/* Typography Font Weights */
+.fw-800 {
+  font-weight: 800;
+}
+p {
+  font-weight: 500;
 }
 
-/* Neo-brutalist Card Base */
-.card {
-  background-color: var(--white);
-  border: 1px solid var(--black);
-  border-radius: 20px;
-  padding: 24px;
-  max-width: 384px;
+/* Card Component Layout & Custom Shadow */
+.blog-card {
+  max-width: 384px; /* Default Figma artboard card layout */
   width: 100%;
-  /* Neo-brutalist solid shadow placement */
-  box-shadow: 8px 8px 0px 0px var(--black);
+  border: 1px solid var(--gray-950);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0px 0px var(--gray-950);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hero Image Wrapper */
-.card-hero {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-
-.hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Text & Meta Information */
-.card-content {
-  margin-bottom: 24px;
-}
-
-.badge {
-  display: inline-block;
+/* Badges & Tags */
+.badge-tag {
   background-color: var(--yellow);
-  font-weight: 800;
+  color: var(--gray-950);
   font-size: 0.875rem;
-  padding: 4px 12px;
-  border-radius: 4px;
-  margin-bottom: 12px;
 }
 
+/* Published Date */
 .published-date {
   font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--black);
-  margin-bottom: 12px;
 }
 
-.card-title {
+/* Dynamic Interactive Title Hook */
+.blog-title {
+  color: var(--gray-950);
   font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  transition: color 0.15s ease-in-out;
 }
 
-.card-title a {
-  color: var(--black);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-/* Interactive Hover States */
-.card-title a:hover,
-.card-title a:focus {
+.blog-title:hover,
+.blog-title:focus-visible {
   color: var(--yellow);
 }
 
-/* Responsive adjustment for interactive feel */
-.card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0px 0px var(--black);
-}
-
-.card-description {
+/* Card Description text */
+.blog-description {
+  color: var(--gray-500);
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--grey);
   line-height: 1.5;
 }
 
-/* Author Section Layout */
-.card-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
+/* Author Avatar Image Sizing */
 .author-avatar {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
 }
 
 .author-name {
-  font-weight: 800;
   font-size: 0.875rem;
 }
 
-/* Responsive optimization for smaller devices */
-@media (max-width: 375px) {
-  .card {
-    padding: 20px;
-  }
-  .card-title {
-    font-size: 1.25rem;
-  }
+/* Card Active Hover Animation Effect */
+.blog-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px 0px var(--gray-950);
 }
+
